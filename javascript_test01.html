@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 01</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { width:100%; overflow-x:hidden; }
+        a { text-decoration: none; }
+        .title { text-align: center; padding-top: 2rem; 
+        padding-bottom: 0.8rem; }
+
+        .wholebox { margin-left: 25%; }
+        .wrap { display:flex; align-items: center; margin-top: 50px; }
+        .text1 { width: 120px; height:auto; text-align: center; }
+        .text2 { width: 120px; height:auto; margin-left: 10%; text-align: center; }
+        .box { width:auto; height:auto; margin-left: 20px; }
+        #form { width:auto; }
+        .box { width: 130px; height: 20px; }
+        .textbox2 { width: 200px; height: 20px; }
+        .textbox3 { width: 600px; height: 20px; }
+        #submitAll { height: 25px; margin-left: 25%; margin-top:30px; }
+    </style>
+</head>
+<body>
+    <h1>연습문제 01</h1>
+    <hr>
+    <div class="wholebox">
+        <form action="" id="form">
+            <div class="wrap">
+                <div class="text1">
+                    <h3><strong>너비 : </strong></h3>
+                </div>
+                <div class="box">
+                    <input type="text" class="textbox1" id="width"> px
+                </div>
+                <div class="text2">
+                    <h3><strong>높이 : </strong></h3>
+                </div>
+                <div class="box">
+                    <input type="text" class="textbox1" id="height"> px
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="text1">
+                    <h3><strong>글자크기 : </strong></h3>
+                </div>
+                <div class="box">
+                    <input type="text" class="textbox1" id="size"> px
+                </div>
+                    <div class="text2">
+                        <h3><strong>굵기 : </strong></h3>
+                    </div>
+                <div class="box">
+                    <label>
+                        보통 <input type="radio" name="fontStyle" value="normal" checked> &nbsp;
+                    </label>
+                    <label>
+                        굵게 <input type="radio" name="fontStyle" value="bold"> 
+                    </label>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="text1">
+                    <h3><strong>글자색 : </strong></h3>
+                </div>
+                <div class="box">
+                    <input type="text" class="textbox2" id="fontcolor">
+                </div>
+                <div class="text2">
+                    <h3><strong>배경색 : </strong></h3>
+                </div>
+                <div class="box">
+                    <input type="text" class="textbox2" id="outcolor">
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="text1">
+                    <h3><strong>가로정렬 : </strong></h3>
+                </div>
+                <div class="box">
+                    <label>
+                        왼쪽 <input type="radio" name="alignStyle" value="left" checked> &nbsp;
+                    </label>
+                    <label>
+                        가운데 <input type="radio" name="alignStyle" value="center" checked> &nbsp;
+                    </label>
+                    <label>
+                        오른쪽 <input type="radio" name="alignStyle" value="right"> 
+                    </label>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="text1">
+                    <h3><strong>세로정렬 : </strong></h3>
+                </div>
+                <div class="box">
+                    <label>
+                        위 <input type="radio" name="alignStyle" value="left" checked> &nbsp;
+                    </label>
+                    <label>
+                        가운데 <input type="radio" name="alignStyle" value="center" checked> &nbsp;
+                    </label>
+                    <label>
+                        아래 <input type="radio" name="alignStyle" value="right"> 
+                    </label>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="text1">
+                    <h3><strong>출력 문자열 : </strong></h3>
+                </div>
+                <div class="box">
+                    <input type="text" id="textbox3">
+                </div>
+            </div>
+        </form>
+    <button id="submitAll" onclick="submitAll()">적용하기</button>
+    </div>
+    <script>
+        function submitAll() {
+            var width = document.getElementById("width").value + 'px';
+            var height = document.getElementById("height").value + 'px';
+            var size = document.getElementById("size").value + 'px';
+        }
+    </script>
+</body>
+</html>

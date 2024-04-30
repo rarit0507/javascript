@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 11</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body {
+            width: 100vw;
+            overflow-x: hidden;
+            background-image: url('hellokitty.png');
+            background-color: palevioletred;
+            background-size: cover;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container { text-align: center; }
+        .btn_area { margin-top: 20px; }
+        .btn1 { font-size: 30px; font-weight:bold; width: 100px; height: 100px; background-image: url('heart.png'); background-size: cover; border: none; background-color: transparent; }
+        .btn2 { font-size: 30px; font-weight:bold; width: 100px; height: 100px; background-image: url('heart2.png'); background-size: cover; border: none; background-color: transparent; }
+        #expression { width: 400px; height: 50px; border-radius: 10px; background-color: #fff; background-color:pink; border-color: hotpink; border-width:5px; font-size: 30px; font-weight: bold; }
+        .green_btn { width: 100px; height: 50px; border-radius: 10px; border-color: hotpink; border-width: 5px; background-color:pink; color: white; }
+        .blue_btn { color: white; border-radius: 10px; border-color: hotpink; border-width: 5px; background-color:pink; }
+        .long_btn { width: 300px; height: 50px; border-radius: 10px; border-color: hotpink; border-width: 5px; background-color:pink; margin-top:15px; font-size: 30px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="tit">전자계산기</h1>
+        <hr>
+        <form id="calculator">
+            <input type="text" id="expression">
+            <div id="display"></div>
+            <hr>
+            <div class="btn_area">
+                <input type="button" class="btn1" value="7" onclick="appendNumber('7')" />
+                <input type="button" class="btn1" value="8" onclick="appendNumber('8')" />
+                <input type="button" class="btn1" value="9" onclick="appendNumber('9')" />
+                <input type="button" class="btn2" value="AC" onclick="clearDisplay()" />
+                <br>
+                <input type="button" class="btn1" value="4" onclick="appendNumber('4')" />
+                <input type="button" class="btn1" value="5" onclick="appendNumber('5')" />
+                <input type="button" class="btn1" value="6" onclick="appendNumber('6')" />
+                <input type="button" class="btn2" value="/" onclick="appendOperator('/')" class="blue_btn" />
+                <br>
+                <input type="button" class="btn1" value="1" onclick="appendNumber('1')" />
+                <input type="button" class="btn1" value="2" onclick="appendNumber('2')" />
+                <input type="button" class="btn1" value="3" onclick="appendNumber('3')" />
+                <input type="button" class="btn2" value="*" onclick="appendOperator('*')" class="blue_btn" />
+                <br>
+                <input type="button" class="btn2" value="." onclick="appendDot()" />
+                <input type="button" class="btn1" value="0" onclick="appendNumber('0')" />
+                <input type="button" class="btn2" value="+" onclick="appendOperator('+')" class="blue_btn" />
+                <input type="button" class="btn2" value="-" onclick="appendOperator('-')" class="blue_btn" />
+            </div>
+            <input type="button" value="=" onclick="calculate()" id="equal" class="long_btn" />
+            <input type="button" value="OFF" onclick="clearDisplay()" id="onoff" class="green_btn"/>
+        </form>
+    </div>
+
+    <script>
+        let expression = document.getElementById('expression');
+
+        function appendNumber(number) {
+            expression.value += number;
+        }
+
+        function appendOperator(operator) {
+            expression.value += operator;
+        }
+
+        function appendDot() {
+            if (!expression.value.includes('.')) {
+                expression.value += '.';
+            }
+        }
+
+        function calculate() {
+            try {
+                expression.value = eval(expression.value);
+            } catch (error) {
+                expression.value = 'Error';
+            }
+        }
+
+        function clearDisplay() {
+            expression.value = '';
+        }
+    </script>
+</body>
+</html>
